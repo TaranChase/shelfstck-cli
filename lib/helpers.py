@@ -81,7 +81,13 @@ def add_review():
 
     print("Your review was added.")
 
-# Exiting programm
+
+# Creating a helper to covert user rating to stars
+
+def rating_to_stars(rating):
+    return "⭐" * rating + "☆" * (5 - rating)
+
+# Exiting program
 
 def exit_program():
     print("Goodbye!")
