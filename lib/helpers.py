@@ -10,7 +10,7 @@ def add_book():
     title = input("Title: ")
     author = input("Author: ")
     genre = input("Genre: ")
-    state = input("Status (read/currently reading/completed)")
+    state = input("Status: (want to read/currently reading/completed)")
 
     if not title or not author:
         print("Invalid. Please enter a Book Title and Author.")
