@@ -8,3 +8,6 @@ class Base (DeclarativeBase):
     pass
 
 
+# Importing model
+from .book import Book
+
