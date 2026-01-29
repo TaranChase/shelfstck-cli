@@ -58,7 +58,29 @@ def add_recommendation():
 
     print("Your recommendation has been successfully added!")
 
+# Add review 
 
+def add_review():
+    book_id = input("Book ID: ")
+
+    book = session.query(Book).filter_by(id=book_id).first()
+
+    if not book:
+        print("Sorry. Book not found.")
+        return
+    
+    rating = input("Rating (1-5): ")
+
+    #if not rating.isdigit() or not (1 <= int(rating) <= 5):
+    if rating != int or int(rating) <= 1 and int(rating) <= 5:
+        print("Invalid. Rating must be an Integer an must be between 1 and 5.")
+        return 
+    
+    review = Review(rating=int(rating), book=book)
+    session.add(review)
+    session.commit()
+
+    print("Your review was added.")
 def exit_program():
     print("Goodbye!")
     exit()
