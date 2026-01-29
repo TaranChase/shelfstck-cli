@@ -27,9 +27,9 @@ def main():
         menu()
         choice = input("> ")
         if choice == "1":
-            add_book()
-        elif choice == "2":
             view_all_books()
+        elif choice == "2":
+            add_book()
         elif choice == "3":
             add_recommendation()
         elif choice == "4":
