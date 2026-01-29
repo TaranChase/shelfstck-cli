@@ -26,7 +26,7 @@ session.commit()
 books = session.query(Book).all()
 
 for b in books:
-    print(b.id, b.title, b.author)
+    print(b.id, b.title, b.author, b.state)
 
 
 
@@ -40,6 +40,21 @@ book_recommendation = Recommend(
 session.add(book_recommendation)
 session.commit()
 
-print("Book recommendations:")
+print("Recommendation:")
 for recomm in book.recommendations:
     print(recomm.comment)
+
+
+  # Testing Reviews
+
+    review = Review(
+        rating = 8,
+        book_id = book.id
+    )
+
+    session.add(review)
+    session.commit()
+
+    print("Rating:")
+    for r in book.reviews:
+        print(r.rating)

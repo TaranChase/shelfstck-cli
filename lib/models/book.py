@@ -43,3 +43,5 @@ class Book(Base):
     # Updating Book to complete and sync the relationship
     recommendations = relationship("Recommend", back_populates="book")
     reviews = relationship("Review", back_populates="book")
+
+  
