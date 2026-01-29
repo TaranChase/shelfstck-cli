@@ -16,3 +16,10 @@ class Book(Base):
     genre = Column(String)
     state = Column(String)
 
+    
+    # Storing a new book in SQLite 
+    def create(self, session):
+        session.add(self)
+        session.commit()
+
+    

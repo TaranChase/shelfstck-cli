@@ -1,8 +1,7 @@
-#!/usr/bin/env python3
-# lib/debug.py
+# Creating tables
 
-from models.__init__ import CONN, CURSOR
-import ipdb
+from models import Base, engine 
 
-
-ipdb.set_trace()
+if __name__ == "__main__":
+    Base.metadata.create_all(engine)
+    print("Database tables created.")
