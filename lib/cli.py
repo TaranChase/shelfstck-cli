@@ -2,7 +2,7 @@
 
 from helpers import (
     add_book, 
-    view_books,
+    view_all_books,
     add_recommendation,
     add_review,
     exit_program
@@ -16,7 +16,7 @@ def main():
         if choice == "1":
             add_book()
         elif choice == "2":
-            view_books()
+            view_all_books()
         elif choice == "3":
             add_recommendation()
         elif choice == "4":

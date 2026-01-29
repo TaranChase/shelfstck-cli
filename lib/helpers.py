@@ -7,17 +7,17 @@ session = Session()
 # Add Book Logic 
 
 def add_book():
-    book_title = input("Title: ")
-    book_author = input("Author: ")
-    book_genre = input("Genre: ")
-    book_state = input("Status (read/currently reading/completed)")
+    title = input("Title: ")
+    author = input("Author: ")
+    genre = input("Genre: ")
+    state = input("Status (read/currently reading/completed)")
 
     if not book_title or not book_author:
         print("Invalid. Please enter a Book Title and Author.")
         return
     
     book = Book(book_title=book_title, book_author=book_author, book_genre=book_genre, book_state=book_state)
-    session.add(Book)
+    session.add(book)
     session.commit()
 
     print("Your book has been added successfully!")
@@ -71,8 +71,7 @@ def add_review():
     
     rating = input("Rating (1-5): ")
 
-    #if not rating.isdigit() or not (1 <= int(rating) <= 5):
-    if rating != int or int(rating) <= 1 and int(rating) <= 5:
+    if not rating.isdigit() or not (1 <= int(rating) <= 5):
         print("Invalid. Rating must be an Integer an must be between 1 and 5.")
         return 
     
