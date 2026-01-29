@@ -1,7 +1,6 @@
 # Creating tables
 
-from models import Base, engine, Session, Book, recommendation, review
-
+from models import Base, engine, Session, Book, Recommend, Review
 if __name__ == "__main__":
     Base.metadata.create_all(engine)
     print("Database tables created.")
@@ -31,4 +30,16 @@ for b in books:
 
 
 
+# Adding a book recommendation 
 
+book_recommendation = Recommend(
+    comment = "This book changed my view on self sabotage and building good habits. Highly recommend!",
+    book_id = book.id
+)
+
+session.add(book_recommendation)
+session.commit()
+
+print("Book recommendations:")
+for recomm in book.recommendations:
+    print(recomm.comment)

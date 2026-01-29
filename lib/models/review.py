@@ -12,7 +12,7 @@ class Review(Base):
     rating = Column(Integer)
 
     # ForeignKey will point to 'books.id' in books.py
-    bood_id = Column(Integer, ForeignKey('books.id'))
+    book_id = Column(Integer, ForeignKey('books.id'))
 
     book = relationship("Book", back_populates="reviews")
 

@@ -9,7 +9,7 @@ class Recommend(Base):
     
     #Primary Key
     id = Column(Integer, primary_key=True)
-    note = Column(String)
+    comment = Column(String)
 
     # ForeignKey will point to 'books.id' in books.py
     book_id = Column(Integer, ForeignKey('books.id'))
