@@ -5,6 +5,7 @@ from helpers import (
     view_all_books,
     add_recommendation,
     add_review,
+    view_reviews,
     exit_program
 )
 
