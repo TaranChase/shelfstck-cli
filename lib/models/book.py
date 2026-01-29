@@ -22,4 +22,21 @@ class Book(Base):
         session.add(self)
         session.commit()
 
+
+    # View all books
+    @classmethod
+    def all_books(cls, session):
+        return session.query(cls).all()
     
+
+    # View specific books using their specific id
+    @classmethod
+    def find_by_id(cls, session, id):
+        return session.query(cls).filter_by(id=id).first()
+    
+    # Deleting/Removing a book 
+    def delete(self, session):
+        session.delete(self)
+        session.commit()
+
+        
