@@ -22,6 +22,8 @@ def main():
             add_recommendation()
         elif choice == "4":
             add_review()
+        elif choice == "5":
+            view_reviews()
         elif choice == "0":
             exit_program()
         else:
@@ -34,6 +36,7 @@ def menu():
     print("2. View all books")
     print("3. Add a recommendation")
     print("4. Add a review")
+    print("5. View reviews")
     print("0. Exit")
 
 
