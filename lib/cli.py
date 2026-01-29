@@ -1,8 +1,11 @@
 # lib/cli.py
 
 from helpers import (
-    exit_program,
-    helper_1
+    add_book, 
+    view_books,
+    add_recommendation,
+    add_review,
+    exit_program
 )
 
 
@@ -10,18 +13,27 @@ def main():
     while True:
         menu()
         choice = input("> ")
-        if choice == "0":
+        if choice == "1":
+            add_book()
+        elif choice == "2":
+            view_books()
+        elif choice == "3":
+            add_recommendation()
+        elif choice == "4":
+            add_review()
+        elif choice == "0":
             exit_program()
-        elif choice == "1":
-            helper_1()
         else:
-            print("Invalid choice")
-
+            print("Invalid choice. Please try again.")
 
 def menu():
+    print("\n Shelfstck CLI")
     print("Please select an option:")
-    print("0. Exit the program")
-    print("1. Some useful function")
+    print("1. Add a book")
+    print("2. View all books")
+    print("3. Add a recommendation")
+    print("4. Add a review")
+    print("0. Exit")
 
 
 if __name__ == "__main__":
