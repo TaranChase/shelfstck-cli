@@ -1,7 +1,6 @@
 # Creating tables
 
-from models import Base, engine 
-from models import Session, Book, Recommend, Review
+from models import Base, engine, Session, Book, recommendation, review
 
 if __name__ == "__main__":
     Base.metadata.create_all(engine)
@@ -14,10 +13,10 @@ session = Session()
 # Creating a book
 
 book = Book(
-    book_title = "Atomic Habits",
-    book_author = "James Clear",
-    book_genre = ["Self-help", "Non-fiction", "Therapy"],
-    book_state = "reading"
+    title = "Atomic Habits",
+    author = "James Clear",
+    genre = "Self-help, Non-Fiction, Therapy",
+    state = "reading"
 )
 
 session.add(book)
@@ -28,8 +27,8 @@ session.commit()
 books = session.query(Book).all()
 
 for b in books:
-    print(b.id, b.book_title, b.book_author)
-    
+    print(b.id, b.title, b.author)
 
 
-Base.metadata.create_all(engine)
+
+
