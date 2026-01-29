@@ -12,11 +12,11 @@ def add_book():
     genre = input("Genre: ")
     state = input("Status (read/currently reading/completed)")
 
-    if not book_title or not book_author:
+    if not title or not author:
         print("Invalid. Please enter a Book Title and Author.")
         return
     
-    book = Book(book_title=book_title, book_author=book_author, book_genre=book_genre, book_state=book_state)
+    book = Book(title=title, author=author, genre=genre, state=state)
     session.add(book)
     session.commit()
 
