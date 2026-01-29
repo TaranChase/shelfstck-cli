@@ -10,9 +10,9 @@ class Book(Base):
 
     # Primary Key
     id = Column(Integer, primary_key=True)
-    
+
     title = Column(String)
     author = Column(String)
     genre = Column(String)
-    status = Column(String)
+    state = Column(String)
 
