@@ -1,5 +1,9 @@
 # lib/helpers.py
 
+from models import Session, Book, Recommend, Review
+
+session = Session()
+
 def helper_1():
     print("Performing useful function#1.")
 
