@@ -41,7 +41,7 @@ class Book(Base):
         session.commit()
     
     # Updating Book to complete and sync the relationship
-    recommendations = relationship("Recommend", back_populates="book")
-    reviews = relationship("Review", back_populates="book")
+    recommendations = relationship("Recommend", back_populates="book", cascade="all, delete")
+    reviews = relationship("Review", back_populates="book", cascade="all, delete")
 
   
