@@ -23,5 +23,13 @@ book = Book(
 session.add(book)
 session.commit()
 
+# Querying Books 
+
+books = session.query(Book).all()
+
+for b in books:
+    print(b.id, b.book_title, b.book_author)
+    
+
 
 Base.metadata.create_all(engine)
