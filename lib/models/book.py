@@ -12,10 +12,10 @@ class Book(Base):
     # Primary Key
     id = Column(Integer, primary_key=True)
 
-    title = Column(String)
-    author = Column(String)
-    genre = Column(String)
-    state = Column(String)
+    book_title = Column(String)
+    book_author = Column(String)
+    book_genre = Column(String)
+    book_state = Column(String)
 
     
     # Storing a new book in SQLite 
