@@ -87,6 +87,19 @@ def add_review():
 def rating_to_stars(rating):
     return "⭐" * rating + "☆" * (5 - rating)
 
+# Function to view the reviews with stars
+
+def view_reviews():
+    reviews = session.query(Review).all()
+
+    if not reviews:
+        print("Sorry. No reviews found.")
+
+    for review in reviews:
+        stars = rating_to_stars(review.rating)
+        print(f"{review.book.title} - {stars}")
+
+
 # Exiting program
 
 def exit_program():
