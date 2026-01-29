@@ -11,7 +11,7 @@ class Recommend(Base):
     id = Column(Integer, primary_key=True)
     note = Column(String)
 
-    # ForeignKey will point ot 'books.id' in books.py
+    # ForeignKey will point to 'books.id' in books.py
     book_id = Column(Integer, ForeignKey('books.id'))
 
     book = relationship("Book", back_populates="recommendations")
