@@ -6,7 +6,7 @@ from . import Base
 # Book Class 
 
 class Book(Base):
-    __tabletitle__ = "books"
+    __tablename__ = "books"
 
     # Primary Key
     id = Column(Integer, primary_key=True)
