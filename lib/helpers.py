@@ -81,6 +81,10 @@ def add_review():
     session.commit()
 
     print("Your review was added.")
+
+# Exiting programm
+
 def exit_program():
     print("Goodbye!")
+    session.close()
     exit()
