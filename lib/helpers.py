@@ -26,6 +26,19 @@ def helper_1():
     print("Performing useful function#1.")
 
 
+# View all books 
+
+def view_all_books():
+    books = session.query(Book).all()
+
+    if not books:
+        print("Sorry! No books were found here!")
+        return
+    
+    for book in books:
+        print(f"{book.id}: {book.title} by {book.author}")
+
+
 def exit_program():
     print("Goodbye!")
     exit()
