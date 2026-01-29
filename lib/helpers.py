@@ -100,6 +100,22 @@ def view_reviews():
         print(f"{review.book.title} - {stars}")
 
 
+ # Function to remove a book and its data
+def remove_book():
+    book_id = input("Book ID: ")
+
+    book = session.query(Book).filter_by(id=book_id).first()
+
+    if not book:
+        print("Sorry. Book not found.")
+        return
+    
+    session.delete(book)
+    session.commit()
+
+    print("Book successfully removed.")
+
+
 # Exiting program
 
 def exit_program():
