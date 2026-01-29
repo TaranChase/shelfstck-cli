@@ -10,4 +10,6 @@ class Base (DeclarativeBase):
 
 # Importing model
 from .book import Book
+from .recommendation import Recommend
+from .review import Review
 

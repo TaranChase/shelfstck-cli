@@ -38,10 +38,9 @@ class Book(Base):
     # Deleting/Removing a book 
     def delete(self, session):
         session.delete(self)
-        session.commit()\
+        session.commit()
     
     # Updating Book to complete and sync the relationship
     recommendations = relationship("Recommend", back_populates="book")
     reviews = relationship("Review", back_populates="book")
 
-    
