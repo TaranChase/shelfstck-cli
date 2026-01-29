@@ -39,6 +39,26 @@ def view_all_books():
         print(f"{book.id}: {book.title} by {book.author}")
 
 
+# Add recommendations 
+
+def add_recommendation():
+    book_id = input("Enter ID: ")
+
+    book = session.query(Book).filter_by(id=book_id).first()
+
+    if not book:
+        print("Sorry. Book not found.")
+        return 
+    
+    comment = input("Recommendation: ")
+
+    recommendation = Recommend(comment=comment, book=book)
+    session.add(recommendation)
+    session.commit()
+
+    print("Your recommendation has been successfully added!")
+
+
 def exit_program():
     print("Goodbye!")
     exit()
