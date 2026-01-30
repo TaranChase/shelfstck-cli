@@ -1,8 +1,7 @@
 # lib/helpers.py
 
-
 """
-Helper functionc created for my Shelfstck CLI Application.
+Helper function created for my Shelfstck CLI Application.
 
 Contains all CRUD - related operations that interact with the database using SQLAlchemy sessions.
 The functions are called by the CLI Menu to perform certain action e.g adding books, reviewing books, recommendations, and removing records.
@@ -11,7 +10,6 @@ The functions are called by the CLI Menu to perform certain action e.g adding bo
 
 from models import Session, Book, Recommend, Review
 session = Session()
-
 
 
 def add_book():
@@ -34,10 +32,6 @@ def add_book():
     session.commit()
 
     print("Your book has been added successfully!")
-                
-def helper_1():
-    print("Performing useful function#1.")
-
 
 
 def view_all_books():
@@ -77,6 +71,7 @@ def add_recommendation():
     print("Your recommendation has been successfully added!")
 
 
+
 def add_review():
     """
     Adds a numerical rating (1-5) to a book the user selects.
@@ -104,7 +99,6 @@ def add_review():
 
 
 
-
 def rating_to_stars(rating):
     """
     Converts the numeric rating given in add_review into a visual star representation
@@ -129,6 +123,7 @@ def view_reviews():
         print(f"{review.book.title} - {stars}")
 
 
+
 def remove_book():
     """
     Deletes a book from the database
@@ -146,6 +141,7 @@ def remove_book():
     session.commit()
 
     print("Book successfully removed.")
+
 
 
 def exit_program():
