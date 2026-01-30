@@ -37,7 +37,7 @@ This project was built to demonstrate and practice:
 - SQLite
 - Pipenv
 
-## How to Run the program
+## How to Run the Application
 
 1. Install dependencies
 
@@ -46,7 +46,8 @@ pipenv install
 pipenv shell
 ```
 
-2. Create and seed database
+2. Seed the Database (Optional - for testing ONLY)
+   _Note:_ `debug.py` is a test file. Running multiple times will duplicate test data in the database. If re-running is required, delete `shelfstck-cli.db` first
 
 ```bash
 python -m lib.debug
