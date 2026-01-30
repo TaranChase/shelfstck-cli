@@ -1,5 +1,11 @@
 # lib/cli.py
 
+"""
+Command Line Interface for Shelfstck Application.
+
+Handles user interaction while routing the menu options to their appropriate helper functions.
+"""
+
 from helpers import (
     add_book, 
     view_all_books,
@@ -11,6 +17,9 @@ from helpers import (
 )
 
 def menu():
+    """
+    Display main menu options to the user
+    """
     print("\n Shelfstck CLI")
     print("Please select an option:")
     print("1. View ALL Books")
@@ -23,6 +32,11 @@ def menu():
 
 
 def main():
+    """
+    The main app loop
+    Will continuously display the menu and proces user input until user exits
+    """
+    
     while True:
         menu()
         choice = input("> ")
