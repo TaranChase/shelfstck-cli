@@ -6,7 +6,7 @@ Command Line Interface for Shelfstck Application.
 Handles user interaction while routing the menu options to their appropriate helper functions.
 """
 
-from helpers import (
+from .helpers import (
     add_book, 
     view_all_books,
     add_recommendation,
