@@ -18,7 +18,6 @@ if __name__ == "__main__":
     # Testing Models 
     session = Session()
 
-
     # Creating a book (if they do not already exist)
 
     # Check if books already exist
@@ -76,41 +75,41 @@ if __name__ == "__main__":
     # Adding a book recommendation 
 
     # Pride and Prejudice
-    rec_1 = Recommend(
+    rc1 = Recommend(
         comment = "Pure period drama. What a classic!",
         book = book_2
     )
 
     # Frankeinstein
-    rec_2 = Recommend(
+    rc2 = Recommend(
         comment = "Maddness. Terrifying, Gruseome yet a rather emotional text.",
         book = book_4
     )
 
-    session.add_all([rec_1, rec_2])
+    session.add_all([rc1, rc2])
     session.commit()
 
     print("\nRecommendations:")
-    for recomm in [rec_1, rec_2]:
+    for recomm in [rc1, rc2]:
         print("-", recomm.comment)
 
 
     # Testing Reviews
-    rev_1 = Review (
+    rv1 = Review (
         rating = 4,
         book = book_2
     )
 
-    rev_2 = Review(
+    rv2 = Review(
         rating = 2,
         book = book_4
     )
 
-    session.add_all([rev_1, rev_2])
+    session.add_all([rv1, rv2])
     session.commit()
 
     print("\nRating:")
-    for r in [rev_1, rev_2]:
+    for r in [rv1, rv2]:
         print("-", r.rating)
 
 

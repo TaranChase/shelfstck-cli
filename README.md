@@ -63,18 +63,18 @@ python -m lib.cli
 shelfstck/
 ├── lib/
 │ ├── cli.py
-│ ├── helpers.py
 │ ├── debug.py
+│ ├── helpers.py
 │ └── models/
 │ ├── init.py
 │ ├── book.py
 │ ├── recommendation.py
 │ └── review.py
 │
-├── shelfstck-cli.db
 ├── Pipfile
 ├── Pipfile.lock
-└── README.md
+├── README.md
+└── shelfstck-cli.db
 
 ## File Descriptions
 
