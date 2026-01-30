@@ -8,7 +8,7 @@ The functions are called by the CLI Menu to perform certain action e.g adding bo
 """
 
 
-from models import Session, Book, Recommend, Review
+from .models import Session, Book, Recommend, Review
 session = Session()
 
 
