@@ -15,3 +15,4 @@ class Review(Base):
     book_id = Column(Integer, ForeignKey('books.id'))
 
     book = relationship("Book", back_populates="reviews")
+

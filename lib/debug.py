@@ -1,14 +1,15 @@
 # Creating tables
 
 from models import Base, engine, Session, Book, Recommend, Review
+
 if __name__ == "__main__":
     Base.metadata.create_all(engine)
     print("Database tables created.")
 
-
 # Testing Models 
-
 session = Session()
+
+
 # Creating a book
 
 book_1 = Book(
@@ -50,8 +51,8 @@ session.add_all([book_1, book_2, book_3, book_4, book_5])
 session.commit()
 
 
-# Adding a book recommendation 
 
+# Adding a book recommendation 
 
 # Pride and Prejudice
 rec_1 = Recommend(
@@ -68,29 +69,28 @@ rec_2 = Recommend(
 session.add_all([rec_1, rec_2])
 session.commit()
 
-print("Recommendation:")
+print("\nRecommendations:")
 for recomm in [rec_1, rec_2]:
     print("-", recomm.comment)
 
 
   # Testing Reviews
+rev_1 = Review (
+    rating = 4,
+    book = book_2
+)
 
-    rev_1 = Review(
-        rating = 4,
-        book = book_2
-    )
+rev_2 = Review(
+    rating = 2,
+    book = book_4
+)
 
-    rev_2 = Review(
-        rating = 2,
-        book = book_4
-    )
+session.add_all([rev_1, rev_2])
+session.commit()
 
-    session.add_all([rev_1, rev_2])
-    session.commit()
-
-    print("Rating:")
-    for r in [rev_1 and rev_2]:
-        print("-", r.rating)
+print("\nRating:")
+for r in [rev_1, rev_2]:
+    print("-", r.rating)
 
 
 # Querying Books 
@@ -98,5 +98,5 @@ for recomm in [rec_1, rec_2]:
 books = session.query(Book).all()
 
 for b in books:
-    print(b.id, b.title, b.author, b.state)
+    print(b.id, b.title, b.author, f"{b.state}")
 
