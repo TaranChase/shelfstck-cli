@@ -1,10 +1,20 @@
-# Creating tables
+"""
+Database Testing
+
+
+Creates database tables and inserts the test data for model relationship testing and overall functionality
+"""
 
 from models import Base, engine, Session, Book, Recommend, Review
 
 if __name__ == "__main__":
+    """
+    Creates all the database tables as well as seeds the initial test data
+    """
+
     Base.metadata.create_all(engine)
     print("Database tables created.")
+
 
 # Testing Models 
 session = Session()
@@ -49,7 +59,6 @@ book_5 = Book(
 
 session.add_all([book_1, book_2, book_3, book_4, book_5])
 session.commit()
-
 
 
 # Adding a book recommendation 
