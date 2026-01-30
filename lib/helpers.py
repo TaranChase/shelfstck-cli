@@ -1,12 +1,25 @@
 # lib/helpers.py
 
-from models import Session, Book, Recommend, Review
 
+"""
+Helper functionc created for my Shelfstck CLI Application.
+
+Contains all CRUD - related operations that interact with the database using SQLAlchemy sessions.
+The functions are called by the CLI Menu to perform certain action e.g adding books, reviewing books, recommendations, and removing records.
+"""
+
+
+from models import Session, Book, Recommend, Review
 session = Session()
 
-# Add Book Logic 
+
 
 def add_book():
+
+    """
+    Will prompt a user for book details such as book title, author, genre and the status. It then saves the new book to the database.
+    """
+
     title = input("Title: ")
     author = input("Author: ")
     genre = input("Genre: ")
@@ -26,9 +39,11 @@ def helper_1():
     print("Performing useful function#1.")
 
 
-# View all books 
 
 def view_all_books():
+    """
+    Displays all books stored in the database.
+    """
     books = session.query(Book).all()
 
     if not books:
@@ -39,9 +54,12 @@ def view_all_books():
         print(f"{book.id}: {book.title} by {book.author}")
 
 
-# Add recommendations 
 
 def add_recommendation():
+    """
+    The user selects a book by ID and provides a recommendation comment.
+    """
+
     book_id = input("Enter ID: ")
 
     book = session.query(Book).filter_by(id=book_id).first()
@@ -58,9 +76,12 @@ def add_recommendation():
 
     print("Your recommendation has been successfully added!")
 
-# Add review 
 
 def add_review():
+    """
+    Adds a numerical rating (1-5) to a book the user selects.
+    """
+
     book_id = input("Book ID: ")
 
     book = session.query(Book).filter_by(id=book_id).first()
@@ -82,14 +103,22 @@ def add_review():
     print("Your review was added.")
 
 
-# Creating a helper to covert user rating to stars
+
 
 def rating_to_stars(rating):
+    """
+    Converts the numeric rating given in add_review into a visual star representation
+
+    """
     return "⭐" * rating + "☆" * (5 - rating)
 
-# Function to view the reviews with stars
+
 
 def view_reviews():
+    """
+    Displays all book reviews in the star based format
+    """
+
     reviews = session.query(Review).all()
 
     if not reviews:
@@ -100,8 +129,11 @@ def view_reviews():
         print(f"{review.book.title} - {stars}")
 
 
- # Function to remove a book and its data
 def remove_book():
+    """
+    Deletes a book from the database
+    """
+
     book_id = input("Book ID: ")
 
     book = session.query(Book).filter_by(id=book_id).first()
@@ -116,9 +148,11 @@ def remove_book():
     print("Book successfully removed.")
 
 
-# Exiting program
-
 def exit_program():
+    """
+    Exits the application and closes the database session safely
+    """
+    
     print("Goodbye!")
     session.close()
     exit()
